@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <%= nav_bar %>
+  <header class="nav_bar">
+    <%= nav_bar brand: "Tip Off", responsive: true, static: true %>
   </header>
 
 <%= yield %>
