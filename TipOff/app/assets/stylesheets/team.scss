@@ -31,6 +31,12 @@
 .gamechoice {
   text-align: center;
 }
+  @media (max-width:632px) {
+    .gamechoice {
+      background-color: #28C9B9;
+      text-align: center;
+    }
+  }
 .itemtext {
   text-align: center;
 }
