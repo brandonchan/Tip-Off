@@ -1,11 +1,17 @@
 $ ->
   console.log('hi')
   $.ajax
-    url: 'http://localhost:3000/games',
+    url: '/games',
     method: 'GET',
     success: (data, status, response) ->
-      gameResponse = JSON.parse(response.responseText)
+      games = JSON.parse(response.responseText)
+      new Vue
+          el: '#seatgeekPrices',
+          data:
+              games: games
     error: ->
       console.log(error)
     dataType: 'json'
+
+
 
