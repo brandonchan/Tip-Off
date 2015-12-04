@@ -1,0 +1,22 @@
+<div class="hero-unit">
+  <h1>It's time for Tip-Off</h1>
+    <p>Scroll down to see prices of the up and coming Warriors Games</p>
+</div>
+  <div id="seatgeekPrices">
+    <ul>
+      <div v-for="game in games">
+        <a href={{game.url}}>
+          <div>
+            {{ game.title }}<br>
+            {{ game.venue }}<br>
+            {{ game.location }}<br>
+            {{ game.lowest_price | currency '$' }}<br>
+          </div>
+        </a>
+      </div>
+    </ul>
+  </div>
+
+  <div id="stubhubPrices">
+
+  </div>
