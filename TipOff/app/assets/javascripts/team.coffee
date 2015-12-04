@@ -1,12 +1,11 @@
-// $ ->
-//   console.log('hi')
-//   $.ajax
-//     url: 'http://api.seatgeek.com/2/events?performers.slug=golden-state-warriors',
-//     method: 'GET',
-//     success: (data, status, response) ->
-//       console.log(response)
-//     error: ->
-//       console.log(error)
-//     dataType: 'json'
-
+$ ->
+  console.log('hi')
+  $.ajax
+    url: 'http://localhost:3000/games',
+    method: 'GET',
+    success: (data, status, response) ->
+      gameResponse = JSON.parse(response.responseText)
+    error: ->
+      console.log(error)
+    dataType: 'json'
 
