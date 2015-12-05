@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'team#index'
   get '/games' => 'team#games'
+  get '/stubhub' => 'team#stubhub'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
