@@ -16,4 +16,9 @@ class TeamController < ApplicationController
     end
     render json: @events
   end
+
+  def stubhub
+    @meat = Stubhub::Venue.search("Golden State Warriors")
+    render json: @meat
+  end
 end
