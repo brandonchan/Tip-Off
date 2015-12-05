@@ -9,6 +9,10 @@ $ ->
           el: '#seatgeekPrices',
           data:
               games: games
+      new Vue
+          el: '#stubhubPrices',
+          data:
+              games: games
     error: ->
       console.log(error)
     dataType: 'json'
