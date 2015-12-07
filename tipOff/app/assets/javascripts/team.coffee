@@ -5,11 +5,14 @@ $ ->
     method: 'GET',
     success: (data, status, response) ->
       games = JSON.parse(response.responseText)
-      gameTime = new Vue
-          el: '#gameTime',
-          data:
-              time: games[0].local_time
-      console.log(gameTime.time)
+      nextGameTime = games[0].datetime_utc
+      currentDate = new Date();
+      futureDate  = new Date(nextGameTime);
+      diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+      clock = $('.clock').FlipClock(diff, {
+        clockFace: 'DailyCounter',
+        countdown: true
+      });
       seatgeek = new Vue
           el: '#seatgeekPrices',
           data:
