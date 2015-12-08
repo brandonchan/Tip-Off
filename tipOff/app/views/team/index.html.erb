@@ -1,11 +1,13 @@
-<div class="hero-unit">
-  <h1>It's time for Tip-Off</h1>
-  <p>Scroll down to see prices of the up and coming Warriors Games</p>
-  <div class="clock"></div>
-  <p id="gameTime">{{time}}</p>
+<div class="jumbotron">
+  <div class="container">
+
+    <h1>It's almost time for Tip-Off</h1>
+    <p>Scroll down to see prices of the up and coming Warriors Games</p>
+    <div class="clock"></div>
+  </div>
 </div>
-<div class="row">
-  <div id="seatgeekPrices" class="col-xs-6">
+<div class="row prices">
+  <div id="seatgeekPrices" class="col-xs-6 sgp">
   <h1>SeatGeek</h1>
     <ul>
       <div v-for="game in games">
@@ -20,7 +22,7 @@
       </div>
     </ul>
   </div>
-   <div id="stubhubPrices" class="col-xs-6">
+   <div id="stubhubPrices" class="col-xs-6 shp">
    <h1>Stubhub</h1>
     <ul>
       <div v-for="game in games">

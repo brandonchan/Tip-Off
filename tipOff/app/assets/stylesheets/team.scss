@@ -1,14 +1,38 @@
-.hero-unit {
-  background: url('http://cdn-jpg.si.com/sites/default/files/styles/si_photo_tile_image_marquee_war_single/public/2015/10/28/stephen-curry-warriors-pelicans-opener.jpg') no-repeat;
-  max-width: 100%;
-  height: 49em;
-  background-position: center;
+body {
+  background: url('http://images.performgroup.com/di/library/omnisport/1f/6a/oracle-arena-06162016-us-news-getty-ftr_10oveyv5g3lp71n28sj1gckl88.jpg') no-repeat;
+  background-attachment: fixed;
 }
-.hero-unit h1 {
-  color: #2C57BF;
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 350px;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background:transparent;
+}
+.jumbotron h1 {
+  color: #003BC2;
   text-align: center;
 }
-.hero-unit p {
-  color: #F8A428;
+.jumbotron p {
+  color: #EEAF00;
   text-align: center;
+}
+.jumbotron .clock {
+  margin-top: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flip-clock-label {
+  font-size: large;
+  color: #EFEFEF;
+}
+.sgp {
+  background-color: #2C57BF;
+  border-color: red;
+}
+.shp {
+
+  background-color: #2C57BF;
 }
