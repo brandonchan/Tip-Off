@@ -28,11 +28,22 @@ body {
   font-size: large;
   color: #EFEFEF;
 }
-.sgp {
-  background-color: #2C57BF;
-  border-color: red;
+.prices h1 {
+  text-align: center;
 }
-.shp {
 
-  background-color: #2C57BF;
+.sgp img {
+    height: 100px;
+    width: 300px;
+}
+
+.shp img {
+    height: 100px;
+    width: 300px;
+}
+
+.everyGame {
+  padding-left: 2em;
+  margin: 1em;
+  background-color: #EEEEEE
 }
