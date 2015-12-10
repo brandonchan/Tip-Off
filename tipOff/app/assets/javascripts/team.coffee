@@ -8,7 +8,7 @@ $ ->
       nextGameTime = games[0].datetime_utc
       currentDate = new Date();
       futureDate  = new Date(nextGameTime);
-      firstTeam = games[0].oppoteam;Z
+      firstTeam = games[0].oppoteam;
       diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
       clock = $('.clock').FlipClock(diff, {
         clockFace: 'DailyCounter',
