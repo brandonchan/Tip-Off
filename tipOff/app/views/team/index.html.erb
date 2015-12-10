@@ -1,39 +1,43 @@
-<div class="hero-unit">
-  <h1>It's time for Tip-Off</h1>
-  <p>Scroll down to see prices of the up and coming Warriors Games</p>
-  <div class="clock"></div>
-  <p id="gameTime">{{time}}</p>
+<div class="jumbotron">
+  <div class="container" id='teamHeader'>
+    <h1>It's almost time for Tip-Off</h1>
+    <h4>Scroll down to see prices of the up and coming Warriors Games</h4>
+    <h4>Time Until The Warriors Face The {{firstTeam}}</h4>
+    <div class="clock"></div>
+  </div>
 </div>
-<div class="row">
-  <div id="seatgeekPrices" class="col-xs-6">
-  <h1>SeatGeek</h1>
-    <ul>
-      <div v-for="game in games">
-        <a href={{game.url}}>
-          <div>
-            {{ game.title }}<br>
-            {{ game.venue }}<br>
-            {{ game.location }}<br>
-            {{ game.lowest_price | currency '$' }}<br>
+<div class="row prices">
+  <div class="container">
+    <div id="seatgeekPrices" class="col-xs-6 sgp">
+        <ul>
+      <img src="http://blogs-images.forbes.com/edzitron/files/2011/04/seatgeek-logo-300x90.png">
+          <div v-for="game in games" class="everyGame">
+            <a href={{game.url}}>
+              <div>
+                {{ game.title }}<br>
+                {{ game.venue }}<br>
+                {{ game.location }}<br>
+                Lowest Price: {{ game.lowest_price | currency '$' }}<br>
+              </div>
+            </a>
           </div>
-        </a>
+        </ul>
       </div>
-    </ul>
-  </div>
-   <div id="stubhubPrices" class="col-xs-6">
-   <h1>Stubhub</h1>
-    <ul>
-      <div v-for="game in games">
-        <a href={{game.url}}>
-          <div>
-            {{ game.title }}<br>
-            {{ game.venue }}<br>
-            {{ game.location }}<br>
-            {{ game.lowest_price | currency '$' }}<br>
+     <div id="stubhubPrices" class="col-xs-6 shp">
+        <ul>
+       <img src="https://pmcvariety.files.wordpress.com/2015/03/stubhub_logo.jpg">
+          <div v-for="game in games" class="everyGame">
+            <a href={{game.url}}>
+              <div>
+                {{ game.title }}<br>
+                {{ game.venue }}<br>
+                {{ game.location }}<br>
+                Lowest Price: {{ game.lowest_price | currency '$' }}<br>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-    </ul>
-  </div>
+        </ul>
+    </div>
 
+  </div>
 </div>
