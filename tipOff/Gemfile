@@ -33,6 +33,8 @@ gem 'httparty'
 gem 'vuejs-rails'
 # stubhub
 gem 'stubhub'
+# nokogiri
+gem 'nokogiri'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

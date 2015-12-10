@@ -1,4 +1,5 @@
 class TeamController < ApplicationController
+  require 'open-uri'
   def index
     #print out all games coming up
     #print current record
@@ -18,7 +19,20 @@ class TeamController < ApplicationController
   end
 
   def stubhub
-    @meat = Stubhub::Venue.search("Golden State Warriors")
-    render json: @meat
+    uri = "http://www.stubhub.com/listingCatalog/select?q=stubhubDocumentType:event%20AND%20description:%22golden%20state%20warriors%22"
+    response = Nokogiri::XML(open(uri))
+
+    numEvents = response.xpath('//doc').length
+    @stubhub = []
+
+    i = 0
+    while i < numEvents
+        minPrice = response.xpath('//float[@name="minPrice"]')[i].children.text
+        urlPath = response.xpath('//str[@name="urlpath"]')[i].children.text
+        eventDate = response.xpath('//date[@name="event_date"]')[i].children.text
+        @stubhub << {minPrice: minPrice, urlPath: urlPath, eventDate: eventDate}
+        i += 1
+    end
+    render json: @stubhub
   end
 end
