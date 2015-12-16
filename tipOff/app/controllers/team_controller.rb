@@ -27,10 +27,13 @@ class TeamController < ApplicationController
 
     i = 0
     while i < numEvents
+        act_primary = response.xpath('//str[@name="act_primary"]')[i].children.text
+        act_secondary = response.xpath('//str[@name="act_secondary"]')[i].children.text
+        title = "#{act_primary} at #{act_secondary}"
         minPrice = response.xpath('//float[@name="minPrice"]')[i].children.text
         urlPath = response.xpath('//str[@name="urlpath"]')[i].children.text
         eventDate = response.xpath('//date[@name="event_date"]')[i].children.text
-        @stubhub << {minPrice: minPrice, urlPath: urlPath, eventDate: eventDate}
+        @stubhub << {minPrice: minPrice, urlPath: urlPath, eventDate: eventDate, title: title}
         i += 1
     end
     render json: @stubhub
