@@ -4,11 +4,10 @@ class TeamController < ApplicationController
     #print out all games coming up
     #print current record
     #print game choices
-
+    Stubhub.update()
   end
 
   def games
-
     @events = []
     response = HTTParty.get("http://api.seatgeek.com/2/events?performers.slug=golden-state-warriors")
     games = response['events']
@@ -19,23 +18,8 @@ class TeamController < ApplicationController
   end
 
   def stubhub
-    uri = "http://www.stubhub.com/listingCatalog/select?q=stubhubDocumentType:event%20AND%20description:%22golden%20state%20warriors%22"
-    response = Nokogiri::XML(open(uri))
+    @remaning_games = Stubhub.order(:date)
 
-    numEvents = response.xpath('//doc').length
-    @stubhub = []
-
-    i = 0
-    while i < numEvents
-        act_primary = response.xpath('//str[@name="act_primary"]')[i].children.text
-        act_secondary = response.xpath('//str[@name="act_secondary"]')[i].children.text
-        title = "#{act_primary} at #{act_secondary}"
-        minPrice = response.xpath('//float[@name="minPrice"]')[i].children.text
-        urlPath = response.xpath('//str[@name="urlpath"]')[i].children.text
-        eventDate = response.xpath('//date[@name="event_date"]')[i].children.text
-        @stubhub << {minPrice: minPrice, urlPath: urlPath, eventDate: eventDate, title: title}
-        i += 1
-    end
-    render json: @stubhub
+    render json: @remaning_games
   end
 end
