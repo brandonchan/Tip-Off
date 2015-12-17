@@ -1,8 +1,8 @@
 class CreateStubhubs < ActiveRecord::Migration
   def change
     create_table :stubhubs do |t|
-      t.string :primary
-      t.string :secondary
+      t.string :venue
+      t.string :location
       t.string :title
       t.integer :price
       t.string :url

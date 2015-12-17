@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20151216214934) do
   enable_extension "plpgsql"
 
   create_table "stubhubs", force: :cascade do |t|
-    t.string   "primary"
-    t.string   "secondary"
+    t.string   "venue"
+    t.string   "location"
     t.string   "title"
     t.integer  "price"
     t.string   "url"

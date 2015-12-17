@@ -18,7 +18,13 @@ class TeamController < ApplicationController
   end
 
   def stubhub
-    @remaning_games = Stubhub.order(:date)
+    @remaning_games=[]
+    stubhub_obj = Stubhub.order(:date)
+    stubhub_obj.each do |game|
+      if game.date > DateTime.now
+        @remaning_games << game
+      end
+    end
     render json: @remaning_games
   end
 end

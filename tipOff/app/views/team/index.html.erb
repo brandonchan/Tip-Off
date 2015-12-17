@@ -9,7 +9,7 @@
 <div class="row prices">
   <div class="container">
     <div id="seatgeekPrices" class="col-xs-6 sgp">
-        <ul>
+      <ul>
       <img src="http://blogs-images.forbes.com/edzitron/files/2011/04/seatgeek-logo-300x90.png">
           <div v-for="game in games" class="everyGame">
             <a href={{game.url}}>
@@ -21,17 +21,22 @@
               </div>
             </a>
           </div>
-        </ul>
-      </div>
-     <div id="stubhubPrices" class="col-xs-6 shp">
-        <ul>
-       <img src="https://pmcvariety.files.wordpress.com/2015/03/stubhub_logo.jpg">
+      </ul>
+    </div>
+    <div id="stubhubPrices" class="col-xs-6 shp">
+      <ul>
+        <img src="https://pmcvariety.files.wordpress.com/2015/03/stubhub_logo.jpg">
           <div v-for="event in events" class="everyGame">
-            <a href='"https://www.stubhub.com/" + {{event.url}}'>
-            dsfasdf
+            <a href={{event.url}}>
+              <div>
+                {{ event.title }}<br>
+                {{ event.venue }}<br>
+                {{ event.location }}<br>
+                Lowest Price: {{ event.price | currency '$' }}<br>
+              </div>
             </a>
           </div>
-        </ul>
+      </ul>
     </div>
 
   </div>

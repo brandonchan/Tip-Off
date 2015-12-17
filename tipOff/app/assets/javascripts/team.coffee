@@ -33,13 +33,10 @@ $ ->
     success: (data, status, response) ->
       events = JSON.parse(response.responseText)
       console.log(events)
-      debugger
-
-
       stubhub = new Vue
           el: '#stubhubPrices',
           data:
-              games: events
+              events: events
     error: ->
       console.log(error)
     dataType: 'json'
