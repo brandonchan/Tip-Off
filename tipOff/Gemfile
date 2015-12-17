@@ -31,8 +31,7 @@ gem 'twitter-bootstrap-rails'
 gem 'httparty'
 # Vuejs
 gem 'vuejs-rails'
-# stubhub
-gem 'stubhub'
+
 # nokogiri
 gem 'nokogiri'
 
