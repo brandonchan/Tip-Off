@@ -14,6 +14,7 @@ uri = "http://www.stubhub.com/listingCatalog/select?q=stubhubDocumentType:event%
         minPrice = response.xpath('//float[@name="minPrice"]')[i].children.text
         minPrice = minPrice.to_i
         urlPath = response.xpath('//str[@name="urlpath"]')[i].children.text
+        urlPath = "https://www.stubhub.com/#{urlPath}"
         eventDate = response.xpath('//date[@name="event_date"]')[i].children.text
         @stubhub << {price: minPrice, url: urlPath, date: eventDate, title: title, primary: act_primary, secondary: act_secondary}
         i += 1

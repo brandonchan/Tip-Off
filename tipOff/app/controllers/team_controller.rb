@@ -19,7 +19,6 @@ class TeamController < ApplicationController
 
   def stubhub
     @remaning_games = Stubhub.order(:date)
-
     render json: @remaning_games
   end
 end
