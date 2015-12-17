@@ -23,10 +23,20 @@ $ ->
           el: '#seatgeekPrices',
           data:
               games: games
+    error: ->
+      console.log(error)
+    dataType: 'json'
+
+  $.ajax
+    url: '/stubhub',
+    method: 'GET',
+    success: (data, status, response) ->
+      events = JSON.parse(response.responseText)
+      console.log(events)
       stubhub = new Vue
           el: '#stubhubPrices',
           data:
-              games: games
+              events: events
     error: ->
       console.log(error)
     dataType: 'json'
