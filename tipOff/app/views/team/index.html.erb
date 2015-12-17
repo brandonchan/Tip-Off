@@ -14,10 +14,10 @@
           <div v-for="game in games" class="everyGame">
             <a href={{game.url}}>
               <div>
-                {{ game.title }}<br>
-                {{ game.venue }}<br>
-                {{ game.location }}<br>
-                Lowest Price: {{ game.lowest_price | currency '$' }}<br>
+                <ul>{{ game.title }}</ul>
+                <ul>{{ game.venue }}</ul>
+                <ul>{{ game.location }}</ul>
+                <ul>Lowest Price: {{ game.lowest_price | currency '$' }}</ul>
               </div>
             </a>
           </div>
@@ -29,10 +29,10 @@
           <div v-for="event in events" class="everyGame">
             <a href={{event.url}}>
               <div>
-                {{ event.title }}<br>
-                {{ event.venue }}<br>
-                {{ event.location }}<br>
-                Lowest Price: {{ event.price | currency '$' }}<br>
+                <ul>{{ event.title }}</ul>
+                <ul>{{ event.venue }}</ul>
+                <ul>{{ event.location }}</ul>
+                <ul>Lowest Price: {{ event.price | currency '$' }}</ul>
               </div>
             </a>
           </div>

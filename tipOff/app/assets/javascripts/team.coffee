@@ -1,5 +1,6 @@
 $ ->
-  console.log('hi')
+  $('#seatgeekPrices').hide()
+  $('#stubhubPrices').hide()
   $.ajax
     url: '/games',
     method: 'GET',
@@ -40,6 +41,16 @@ $ ->
     error: ->
       console.log(error)
     dataType: 'json'
+  x = 10
+  size_li = $("#stubhubPrices ul").size();
+  $('#stubhubPrices ul:lt('+x+')').show();
+  $('#loadMore').click( ->
+      x= (x+5 <= size_li) ? x+5 : size_li;
+      $('#myList li:lt('+x+')').show();
+  );
+
+  $('#seatgeekPrices').fadeIn('slow')
+  $('#stubhubPrices').fadeIn('slow')
 
 
 
