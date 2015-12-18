@@ -26,7 +26,7 @@
     <div id="stubhubPrices" class="col-xs-6 shp">
       <ul>
         <img src="https://pmcvariety.files.wordpress.com/2015/03/stubhub_logo.jpg">
-          <div v-for="event in events" class="everyGame">
+          <div v-for="event in events | limitBy 10" class="everyGame">
             <a href={{event.url}}>
               <div>
                 <ul>{{ event.title }}</ul>
