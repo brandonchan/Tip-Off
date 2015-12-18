@@ -1,5 +1,4 @@
 $ ->
-  console.log('hi')
   $.ajax
     url: '/games',
     method: 'GET',
@@ -32,7 +31,6 @@ $ ->
     method: 'GET',
     success: (data, status, response) ->
       events = JSON.parse(response.responseText)
-      console.log(events)
       stubhub = new Vue
           el: '#stubhubPrices',
           data:
@@ -40,6 +38,10 @@ $ ->
     error: ->
       console.log(error)
     dataType: 'json'
+
+
+  $('#seatgeekPrices').fadeIn('slow')
+  $('#stubhubPrices').fadeIn('slow')
 
 
 
